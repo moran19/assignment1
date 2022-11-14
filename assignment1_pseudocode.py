@@ -11,20 +11,20 @@ def insert(nam, num):
     return contacts
 
 
-def search(lst, nam, usage):
+def search(lst, nam):
     """Searches for the contact information of the name provided by the user. 
     Uses the Sequential Search Algorithm """
     i = 0
 
     while i < len(lst):
-        if lst[i].startswith(nam):
-            if usage == "d":
-                return i
+        if entry starts with name:
+            if used in the delete function:
+                return index number
             else:
-                return lst[i]
+                return contact details
         else:
             i += 1
-    return nam + " not in contacts"
+    return  "name not in contacts"
 
 
 def delete(lst, nam):
@@ -32,12 +32,12 @@ def delete(lst, nam):
     Uses the search function to find the contact
     and list slicing to remove the contact from the list"""
     global contacts
-    entry_index = search(lst, nam, "d")
-    if type(entry_index) == int:
+    entry_index = index of search result
+    if entry_index is int:
         lst = lst[:entry_index] + lst[entry_index + 1:]
-        return nam + " deleted"
+        return "name deleted"
     else:
-        return entry_index
+        return "name not in contacts"
 
 
 def sort(lst, asc_des):
@@ -45,40 +45,19 @@ def sort(lst, asc_des):
     Uses the Insertion Sort Algorithm"""
     i = 1
 
-    if len(lst) == 0:
-        return "List is empty, no entries to sort"
-    else:
-        #Sort list in ascending order
-        if asc_des:
-            while i < len(lst):
-                """Outer loop, ensures that the entry we're checking is saved and setting the comparison 
-                to the prior entry for as long as there are entries to check"""
-                temp = lst[i]
-                j = i - 1
+    if in ascending order:
+        while i < len(lst):
+            temp = lst[i]
 
-                while j >= 0 and temp < lst[j]:
-                    """Inner loop, continues while there's a another entry to compare and our entry is 
-                    smaller than the previous entry"""
-                    lst[i] = lst[j]
-                    i -= 1
-                    j -= 1
-                lst[i] = temp
-                i += 1
-            return lst
-
-        else:
-            #Sort list in descending order
-            while i < len(lst):
-                temp = lst[i]
-                j = i - 1
-
-                while j >= 0 and temp > lst[j]:
-                    lst[i] = lst[j]
-                    i -= 1
-                    j -= 1
-                lst[i] = temp
-                i += 1
+            while there are entries prior to temp and temp is smaller than previous entry:
+                entry = previous entry
+                continue checking previous entries
+            update temp in its right location
+            i += 1
         return lst
+    else:
+        reverse of above
+
 
 
 def action():
