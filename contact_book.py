@@ -149,7 +149,7 @@ def action():
     elif activity.lower() == "exit":
         quit()
     else:
-        action()
+        return "No action selected"
 
 #Executes the program
 while activity != "exit":
