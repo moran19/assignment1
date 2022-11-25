@@ -29,7 +29,7 @@ def search(lst, nam, usage):
         confirm = input("Are you sure you wish to find {}? Enter 'yes'/'y' or 'no': ".format(nam))
         if confirm.lower() == "yes" or confirm.lower() == "y":
             for name in lst:
-                if nam in name:
+                if nam.lower() in name.lower():
                     match.append(name)
         else:
             return "No action was taken"
@@ -42,7 +42,7 @@ def search(lst, nam, usage):
     # When used in the delete function. Makes sure the user is aware of the details of the name and number to be deleted
     if usage == "d":
         while i < len(lst):
-            if nam in lst[i]:
+            if nam.lower() in lst[i].lower():
                 confirm = input(
                     "Are you sure you wish to delete {}? This action cannot be undone. Enter 'yes'/'y' or 'no': ".format(lst[i]))
                 if confirm.lower() == "yes" or confirm.lower() == "y":
