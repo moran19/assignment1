@@ -39,7 +39,8 @@ def search(lst, nam, usage):
         else:
             return match
 
-    # When used in the delete function. Makes sure the user is aware of the details of the name and number to be deleted
+    # When used in the delete function, returns index number.
+    #Makes sure the user is aware of the details to be deleted
     if usage == "d":
         while i < len(lst):
             if nam.lower() in lst[i].lower():
